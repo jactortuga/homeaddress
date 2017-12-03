@@ -133,9 +133,6 @@ $(document).ready(function() {
 
   // Get full address from address details fields on second form submission
   function getFullAddress() {
-    console.log($('#lineTwoInput').val())
-    console.log($('#lineTwoInput').val().length)
-    console.log($('#lineTwoInput').val() !== '')
     var addressLineOne    = $('#lineOneInput').val().length ? $('#lineOneInput').val() + ', ' : '';
     var addressLineTwo    = $('#lineTwoInput').val().length ? $('#lineTwoInput').val() + ', ' : '';
     var addressLineThree  = $('#lineThreeInput').val().length ? $('#lineThreeInput').val() + ', ' : '';
