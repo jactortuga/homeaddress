@@ -25,7 +25,7 @@ $(document).ready(function() {
     $('#formContainer').addClass('form-section--opaque');
 
     var postcode  = $('#postcodeInput').val();
-    var apiKey    = 'ejhha1uRIEeRN9Lu9JloqQ11342'; // Not safe to store key here on live environments
+    var apiKey    = 'hTbZuAf_U0qpOvh_9Dj2_g11344'; // Not safe to store key here on live environments
     var apiUrl    = 'https://api.getAddress.io/find/'+ postcode +'?api-key='+ apiKey;
 
     $.ajax({
@@ -83,12 +83,12 @@ $(document).ready(function() {
   function populateAddressFields() {
     $('#addressInput').on('change', function() {
       var addressValue      = this.value;
-      var addressArray      = addressValue.split(',');
+      var addressArray      = addressValue.split(', ');
       var addressLineOne    = addressArray[0];
       var addressLineTwo    = addressArray[1];
       var addressLineThree  = addressArray[2];
       var addressTown       = addressArray[5];
-      var addressCounty     = addressArray[6].slice(1);
+      var addressCounty     = addressArray[6];
       var addressCountry    = 'United Kingdom';
 
       for (var i = 0; i < countyList.length; i++){
@@ -116,6 +116,9 @@ $(document).ready(function() {
 
   // Toggle county field based on country field selection
   function toggleUkCounties() {
+    $('#countyInput').attr('disabled', false);
+    $('#countyInput').removeClass('form-fieldset__select--hidden');
+
     $('#countryInput').on('change', function() {
       if(this.value === 'United Kingdom') {
         $('#countyInput').attr('disabled', false);
@@ -130,10 +133,13 @@ $(document).ready(function() {
 
   // Get full address from address details fields on second form submission
   function getFullAddress() {
-    var addressLineOne    = $('#lineOneInput').val() ? $('#lineOneInput').val() + ', ' : '';
-    var addressLineTwo    = $('#lineTwoInput').val() ? $('#lineTwoInput').val() + ', ' : '';
-    var addressLineThree  = $('#lineThreeInput').val() ? $('#lineThreeInput').val() + ', ' : '';
-    var addressTown       = $('#townInput').val() ? $('#townInput').val() + ', ' : '';
+    console.log($('#lineTwoInput').val())
+    console.log($('#lineTwoInput').val().length)
+    console.log($('#lineTwoInput').val() !== '')
+    var addressLineOne    = $('#lineOneInput').val().length ? $('#lineOneInput').val() + ', ' : '';
+    var addressLineTwo    = $('#lineTwoInput').val().length ? $('#lineTwoInput').val() + ', ' : '';
+    var addressLineThree  = $('#lineThreeInput').val().length ? $('#lineThreeInput').val() + ', ' : '';
+    var addressTown       = $('#townInput').val().length ? $('#townInput').val() + ', ' : '';
     var addressCounty     = $('#countryInput').val() === 'United Kingdom' ? $('#countyInput').val() + ', ' : '';
     var addressCountry    = $('#countryInput').val() + '.';
     var yearsAtAddress    = $('#yearsInput').val();
