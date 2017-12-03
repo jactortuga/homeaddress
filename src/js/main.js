@@ -16,8 +16,9 @@ $(document).ready(function() {
   });
 
   function getAddressDetails() {
+    $('#formContainer').addClass('form-section--opaque');
     var postcode  = $('#postcodeInput').val();
-    var apiKey    = 'nSJeNojaQE-dX4tiiRtfzg11341'; // Not safe to store key here on live environments
+    var apiKey    = 'ejhha1uRIEeRN9Lu9JloqQ11342'; // Not safe to store key here on live environments
     var apiUrl    = 'https://api.getAddress.io/find/'+ postcode +'?api-key='+ apiKey;
 
     $.ajax({
@@ -28,11 +29,15 @@ $(document).ready(function() {
         console.log('Success!');
         console.log(data);
         var addresses = data.addresses;
+        $('#formContainer').removeClass('form-section--opaque');
+        $('#postcodeInput').attr('disabled', true);
+        $('#postcodeInput').addClass('form-section__input--disabled');
         generateAddressDropdown(addresses);
       },
       error: function(data) {
         console.log('Error!');
         console.log(data);
+        $('#formContainer').removeClass('form-section--opaque');
         displayErrorMessage();
       }
     });
@@ -124,13 +129,23 @@ $(document).ready(function() {
   function addAddressBox(address, time) {
     $('<div class="form-section__inner form-section__inner--half form-section__inner--opaque"><p>'+ address +'</p><p>'+ time +'</p></div>').appendTo('#addressBoxesContainer');
 
-    if($('#addressBoxesContainer').is(':visible')) {
-      $('#addressBoxesContainer').fadeIn(200, function() {
-        $(this).css('display','flex');
-        $('#extraFieldsContainer').fadeOut(200);
-      });
-    } else {
-      $('#extraFieldsContainer').fadeOut(200);
-    }
+    $('#extraFieldsContainer').fadeOut(200, function() {
+      cleanAddressFields();
+      if(!$('#addressBoxesContainer').is(':visible')) {
+        $('#addressBoxesContainer').fadeIn(200, function() {
+          $(this).css('display','flex');
+        });
+      }
+    });
+  }
+
+  function cleanAddressFields() {
+    $('#yearsInput').val('');
+    $('#monthsInput').val('');
+    $('#addressInput').val('');
+    $('#postcodeInput').val('');
+    $('#postcodeInput').attr('disabled', false);
+    $('#postcodeInput').removeClass('form-section__input--disabled');
+    $('#addressFieldset').remove();
   }
 });
