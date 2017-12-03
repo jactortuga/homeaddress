@@ -1,18 +1,17 @@
 $(document).ready(function() {
-  console.log('hello world');
+  console.log('Hello Octopus!');
 
   var countyList  = ['Avon', 'Bedfordshire', 'Berkshire', 'Buckinghamshire', 'Cambridgeshire', 'Cheshire', 'Cleveland', 'Cornwall', 'Cumbria', 'Derbyshire', 'Devon', 'Dorset', 'Durham', 'East Sussex', 'Essex', 'Gloucestershire', 'Hampshire', 'Herefordshire', 'Hertfordshire', 'Isle of Wight', 'Kent', 'Lancashire', 'Leicestershire', 'Lincolnshire', 'Greater London', 'Merseyside', 'Middlesex', 'Norfolk', 'Northamptonshire', 'Northumberland', 'North Humberside', 'North Yorkshire', 'Nottinghamshire', 'Oxfordshire', 'Rutland', 'Shropshire', 'Somerset', 'South Humberside', 'South Yorkshire', 'Staffordshire', 'Suffolk', 'Surrey', 'Tyne and Wear', 'Warwickshire', 'West Midlands', 'West Sussex', 'West Yorkshire', 'Wiltshire', 'Worcestershire', 'Clwyd', 'Dyfed', 'Gwent', 'Gwynedd', 'Mid Glamorgan', 'Powys', 'South Glamorgan', 'West Glamorgan', 'Aberdeenshire', 'Angus', 'Argyll', 'Ayrshire', 'Banffshire', 'Berwickshire', 'Bute', 'Caithness', 'Clackmannanshire', 'Dumfriesshire', 'Dunbartonshire', 'East Lothian', 'Fife', 'Inverness-shire', 'Kincardineshire', 'Kinross-shire', 'Kirkcudbrightshire', 'Lanarkshire', 'Midlothian', 'Moray', 'Nairnshire', 'Orkney', 'Peeblesshire', 'Perthshire', 'Renfrewshire', 'Ross-shire', 'Roxburghshire', 'Selkirkshire', 'Shetland', 'Stirlingshire', 'Sutherland', 'West Lothian', 'Wigtownshire', 'Antrim', 'Armagh', 'Down', 'Fermanagh', 'Londonderry', 'Tyrone'];
   var countryList = ['Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Angola', 'Anguilla', 'Antigua &amp; Barbuda', 'Argentina', 'Armenia', 'Aruba', 'Australia', 'Austria', 'Azerbaijan', 'Bahamas' , 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgium', 'Belize', 'Benin', 'Bermuda', 'Bhutan', 'Bolivia', 'Bosnia &amp; Herzegovina', 'Botswana', 'Brazil', 'British Virgin Islands', 'Brunei', 'Bulgaria', 'BurkinaFaso', 'Burundi', 'Cambodia', 'Cameroon', 'Canada', 'Cape Verde', 'Cayman Islands', 'Chad', 'Chile', 'China', 'Colombia', 'Congo', 'Cook Islands', 'Costa Rica', 'Cote D\' Ivoire', 'Croatia', 'Cruise Ship', 'Cuba', 'Cyprus', 'Czech Republic', 'Denmark', 'Djibouti', 'Dominica', 'Dominican Republic', 'Ecuador', 'Egypt', 'El Salvador', 'Equatorial Guinea', 'Estonia', 'Ethiopia', 'Falkland Islands', 'Faroe Islands', 'Fiji', 'Finland', 'France', 'French Polynesia', 'French West Indies', 'Gabon', 'Gambia', 'Georgia', 'Germany', 'Ghana' ,'Gibraltar','Greece','Greenland','Grenada','Guam','Guatemala','Guernsey','Guinea','Guinea Bissau', 'Guyana', 'Haiti', 'Honduras', 'Hong Kong', 'Hungary', 'Iceland', 'India', 'Indonesia', 'Iran', 'Iraq', 'Ireland', 'Isle of Man', 'Israel', 'Italy', 'Jamaica', 'Japan', 'Jersey', 'Jordan', 'Kazakhstan', 'Kenya', 'Kuwait','Kyrgyz Republic', 'Laos', 'Latvia' ,'Lebanon', 'Lesotho', 'Liberia', 'Libya', 'Liechtenstein', 'Lithuania', 'Luxembourg', 'Macau', 'Macedonia', 'Madagascar', 'Malawi', 'Malaysia', 'Maldives', 'Mali', 'Malta', 'Mauritania' , 'Mauritius', 'Mexico', 'Moldova', 'Monaco', 'Mongolia', 'Montenegro', 'Montserrat', 'Morocco', 'Mozambique', 'Namibia', 'Nepal', 'Netherlands', 'Netherlands Antilles', 'New Caledonia', 'New Zealand', 'Nicaragua', 'Niger', 'Nigeria', 'Norway', 'Oman', 'Pakistan', 'Palestine', 'Panama', 'Papua New Guinea', 'Paraguay', 'Peru', 'Philippines', 'Poland', 'Portugal', 'Puerto Rico', 'Qatar', 'Reunion', 'Romania', 'Russia', 'Rwanda', 'Saint Pierre &amp; Miquelon', 'Samoa', 'San Marino', 'Saudi Arabia', 'Senegal', 'Serbia', 'Seychelles', 'Sierra Leone', 'Singapore', 'Slovakia', 'Slovenia', 'South Africa', 'South Korea', 'Spain', 'Sri Lanka', 'St Kitts &amp; Nevis', 'St Lucia', 'St Vincent', 'St. Lucia', 'Sudan', 'Suriname', 'Swaziland', 'Sweden', 'Switzerland', 'Syria', 'Taiwan', 'Tajikistan', 'Tanzania', 'Thailand', 'Togo', 'Tonga', 'Trinidad &amp; Tobago', 'Tunisia', 'Turkey', 'Turkmenistan', 'Turks &amp; Caicos', 'Uganda', 'Ukraine', 'United Arab Emirates', 'United Kingdom', 'United States', 'United States Minor Outlying Islands', 'Uruguay', 'Uzbekistan', 'Venezuela', 'Vietnam', 'Virgin Islands (US)', 'Yemen', 'Zambia', 'Zimbabwe'];
 
   $('#addressForm').submit(function(event) {
     event.preventDefault();
-    console.log('Form submitted');
 
     if(!$('#extraFieldsContainer').is(':visible')) {
       hideErrorMessage();
       getAddressDetails();
     } else {
-      alert('FINAL STEP!');
+      getFullAddress();
     }
   });
 
@@ -40,15 +39,11 @@ $(document).ready(function() {
   }
 
   function displayErrorMessage() {
-    $('#errorMessage').fadeIn(200, function() {
-      console.log('Error message is visible');
-    });
+    $('#errorMessage').fadeIn(200);
   }
 
   function hideErrorMessage() {
-    $('#errorMessage').fadeOut(100, function() {
-      console.log('Error message is invisible');
-    });
+    $('#errorMessage').fadeOut(200);
   }
 
   function generateAddressDropdown(addressList) {
@@ -67,8 +62,6 @@ $(document).ready(function() {
 
   function populateAddressFields() {
     $('#addressInput').on('change', function() {
-      console.log('select has changed!');
-      console.log(this.value);
       var addressValue      = this.value;
       var addressArray      = addressValue.split(',');
       var addressLineOne    = addressArray[0];
@@ -77,8 +70,6 @@ $(document).ready(function() {
       var addressTown       = addressArray[5];
       var addressCounty     = addressArray[6].slice(1);
       var addressCountry    = 'United Kingdom';
-
-      console.log(addressCounty)
 
       for (var i = 0; i < countyList.length; i++){
         $('<option/>').val(countyList[i]).html(countyList[i]).appendTo('#countyInput');
@@ -97,7 +88,6 @@ $(document).ready(function() {
 
       $('#extraFieldsContainer').fadeIn(200, function() {
         $(this).css('display','flex');
-        console.log('Extra fields now visible!');
         toggleUkCounties();
       });
     });
@@ -115,4 +105,32 @@ $(document).ready(function() {
     });
   }
 
+  function getFullAddress() {
+    var addressLineOne    = $('#lineOneInput').val() ? $('#lineOneInput').val() + ', ' : '';
+    var addressLineTwo    = $('#lineTwoInput').val() ? $('#lineTwoInput').val() + ', ' : '';
+    var addressLineThree  = $('#lineThreeInput').val() ? $('#lineThreeInput').val() + ', ' : '';
+    var addressTown       = $('#townInput').val() ? $('#townInput').val() + ', ' : '';
+    var addressCounty     = $('#countryInput').val() === 'United Kingdom' ? $('#countyInput').val() + ', ' : '';
+    var addressCountry    = $('#countryInput').val() + '.';
+    var yearsAtAddress    = $('#yearsInput').val();
+    var monthsAtAddress   = $('#monthsInput').val();
+    var fullAddress       = addressLineOne + addressLineTwo + addressLineThree + addressTown + addressCounty + addressCountry;
+    var timeAtAddress     = 'Time at the address: ' + yearsAtAddress + ', ' + monthsAtAddress;
+
+    addAddressBox(fullAddress, timeAtAddress);
+  }
+
+
+  function addAddressBox(address, time) {
+    $('<div class="form-section__inner form-section__inner--half form-section__inner--opaque"><p>'+ address +'</p><p>'+ time +'</p></div>').appendTo('#addressBoxesContainer');
+
+    if($('#addressBoxesContainer').is(':visible')) {
+      $('#addressBoxesContainer').fadeIn(200, function() {
+        $(this).css('display','flex');
+        $('#extraFieldsContainer').fadeOut(200);
+      });
+    } else {
+      $('#extraFieldsContainer').fadeOut(200);
+    }
+  }
 });

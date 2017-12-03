@@ -20,22 +20,12 @@
           <p class="form-section__description">Please enter the director’s home address for the last 3 years.</p>
           <hr class="form-section__break">
         </div>
-        <div class="form-section__inner form-section__inner--wide form-section__inner--row form-section__inner--hidden">
-          <div class="form-section__inner form-section__inner--half form-section__inner--opaque">
-            <p>Full Address here</p>
-            <p>Full time here</p>
-          </div>
-          <div class="form-section__inner form-section__inner--half form-section__inner--opaque">
-            <p>Full Address here</p>
-            <p>Full time here</p>
-          </div>
-
-        </div>
+        <div id="addressBoxesContainer" class="form-section__inner form-section__inner--wide form-section__inner--row form-section__inner--hidden"></div>
         <form id="addressForm">
           <div class="form-section__inner form-section__inner--narrow">
             <fieldset class="form-section__fieldset">
               <legend class="form-section__legend">How long did you stay at your <span class="form-section__span">current address</span>?</legend>
-              <select required class="form-section__select">
+              <select id="yearsInput" required class="form-section__select">
                 <option value="" disabled selected class="form-section__option form-section__option--default">Years</option>
                 <option value="0 Years">0 Years</option>
                 <option value="1 Year">1 Year</option>
@@ -43,7 +33,7 @@
                 <option value="3 Years">3 Year</option>
                 <option value="4 Years+">4 Years+</option>
               </select>
-              <select required class="form-section__select form-section__select--right">
+              <select id="monthsInput" required class="form-section__select form-section__select--right">
                 <option value="" disabled selected class="form-section__option form-section__option--default">Months</option>
                 <option value="0 Months">0 Months</option>
                 <option value="1 Month">1 Month</option>
