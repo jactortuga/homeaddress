@@ -194,6 +194,15 @@ $responsive-break-large: 900px;
     width: calc(50% - 5px);
     -webkit-appearance: none;
 
+    &:focus {
+      outline-color: $transparent-white;
+      outline-width: 3px;
+    }
+
+    &:invalid {
+      color: $semi-transparent-white;
+    }
+
     &--left {
       text-align: left;
       text-align-last: left;
@@ -211,17 +220,6 @@ $responsive-break-large: 900px;
     &--hidden {
       color: transparent;
       opacity: 0.2;
-    }
-
-    &:focus {
-      outline-color: $transparent-white;
-      outline-width: 3px;
-    }
-  }
-
-  &__option {
-    &--default {
-      display: none;
     }
   }
 
