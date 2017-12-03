@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Octopus Labs</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400|Ubuntu:400:700" rel="stylesheet">
+    <link rel="stylesheet" href="dist/css/style.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="dist/js/main.min.js"></script>
+  </head>
+  <body class="site-body">
+    <header class="site-header">
+      <img src="./dist/img/logo.png" alt="octopus_labs" class="site-header__logo" >
+    </header>
+    <main class="site-main">
+      <section class="form-section">
+        <div class="form-section__inner form-section__inner--narrow">
+          <h1 class="form-section__title">Home address</h1>
+          <p class="form-section__description">Please enter the director’s home address for the last 3 years.</p>
+          <hr class="form-section__break">
+        </div>
+        <form id="addressForm">
+          <div class="form-section__inner form-section__inner--narrow">
+            <fieldset class="form-section__fieldset">
+              <legend class="form-section__legend">How long did you stay at your <span class="form-section__span">current address</span>?</legend>
+              <select required class="form-section__select">
+                <option value="" disabled selected class="form-section__option form-section__option--default">Years</option>
+                <option value="0">0 Years</option>
+                <option value="1">1 Year</option>
+                <option value="2">2 Year</option>
+                <option value="3">3 Year</option>
+                <option value="more">More</option>
+              </select>
+              <select required class="form-section__select form-section__select--right">
+                <option value="" disabled selected class="form-section__option form-section__option--default">Months</option>
+                <option value="0">0 Months</option>
+                <option value="1">1 Month</option>
+                <option value="2">2 Months</option>
+                <option value="3">3 Months</option>
+                <option value="4">4 Months</option>
+                <option value="5">5 Months</option>
+                <option value="6">6 Months</option>
+                <option value="7">7 Months</option>
+                <option value="8">8 Months</option>
+                <option value="9">9 Months</option>
+                <option value="10">10 Months</option>
+                <option value="11">11 Months</option>
+                <option value="12">12 Months</option>
+              </select>
+            </fieldset>
+            <fieldset class="form-section__fieldset">
+              <legend class="form-section__legend">Your address:</legend>
+              <input type="text" required id="postcodeInput" class="form-section__input form-section__input--lens"  placeholder="Postcode">
+            </fieldset>
+            <p id="errorMessage" class="form-section__error">Sorry, your address could not be found. Please try again.</p>
+          </div>
+          <div id="extraFieldsContainer" class="form-section__inner form-section__inner--wide">
+            <div class="form-section__inner form-section__inner--half">
+              <fieldset class="form-section__fieldset">
+                <legend class="form-section__legend">Address line 1:</legend>
+                <input type="text" id="lineOneInput" class="form-section__input">
+              </fieldset>
+              <fieldset class="form-section__fieldset">
+                <legend class="form-section__legend">Address line 2:</legend>
+                <input type="text" id="lineTwoInput" class="form-section__input">
+              </fieldset>
+              <fieldset class="form-section__fieldset">
+                <legend class="form-section__legend">Address line 3:</legend>
+                <input type="text" id="lineThreeInput" class="form-section__input">
+              </fieldset>
+            </div>
+            <div class="form-section__inner form-section__inner--half">
+              <fieldset class="form-section__fieldset">
+                <legend class="form-section__legend">Town:</legend>
+                <input type="text" id="townInput" class="form-section__input">
+              </fieldset>
+              <fieldset class="form-section__fieldset">
+                <legend class="form-section__legend">County:</legend>
+                <select id="countyInput" class="form-section__select form-section__select--left form-section__select--wide"></select>
+              </fieldset>
+              <fieldset class="form-section__fieldset">
+                <legend class="form-section__legend">Country:</legend>
+                <select id="countryInput" class="form-section__select form-section__select--left form-section__select--wide"></select>
+              </fieldset>
+            </div>
+          </div>
+          <button class="form-section__button">Confirm and continue</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

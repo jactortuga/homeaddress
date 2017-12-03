@@ -1,0 +1,257 @@
+@import 'reset';
+
+$transparent-white: rgba(255,255,255,0.1);
+$semi-transparent-white: rgba(255,255,255,0.5);
+$white: #ffffff;
+$pink: #ff2e87;
+$red: #ff0033;
+
+.site-body {
+  color: $white;
+  // background: linear-gradient(135deg, rgba(35,215,245,1) 0%,rgba(28,189,224,1) 100%);
+  // background-color: rgba(35,215,245,1);
+  background-image: url('../img/background.png');
+  background-position: top left;
+  background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  font-weight: lighter;
+  line-height: 1.2;
+  letter-spacing: 0.4px
+}
+
+.site-header {
+  background-color: $transparent-white;
+  height: 100px;
+  padding: 0 20px;
+  width: calc(100% - 40px);
+
+  &__logo {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 150px;
+  }
+}
+
+.site-main {
+  min-height: calc(100vh - 100px);
+  overflow: auto;
+  padding: 0 20px;
+  width: calc(100% - 40px);
+}
+
+.form-section {
+  margin: 50px auto;
+  max-width: 800px;
+  text-align: center;
+  width: 100%;
+
+  &__inner {
+
+    &--narrow {
+      margin: 0 auto;
+      max-width: 400px;
+    }
+
+    &--half {
+      width: calc(50% - 5px);
+    }
+
+    &--wide {
+      display: none;
+      justify-content: space-between;
+      position: relative;
+      margin-top: 70px;
+      max-width: 810px;
+
+        &:before {
+          background-image: url('../img/arrow_double.png');
+          background-size: 13px;
+          background-repeat: no-repeat;
+          content: '';
+          height: 16px;
+          left: 0;
+          margin: 0 auto;
+          position: absolute;
+          right: 0;
+          top: -43px;
+          width: 13px;
+        }
+    }
+  }
+
+  &__title {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+
+  &__description {
+    margin-bottom: 25px
+  }
+
+  &__break {
+    background-color: $transparent-white;
+    border: none;
+    border-radius: 4px;
+    height: 4px;
+    margin-bottom: 50px
+  }
+
+  &__fieldset {
+    display: inline-block;
+    margin-bottom: 20px;
+    text-align: left;
+    width: 100%;
+
+    &--hidden {
+      display: none;
+    }
+  }
+
+  &__legend {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  &__span {
+    font-weight: normal;
+  }
+
+  &__span {
+    font-weight: normal;
+  }
+
+  &__select {
+    color: $white;
+    background-color: transparent;
+    background-image: url('../img/arrow_down.png');
+    background-position: 90% 50%;
+    background-repeat: no-repeat;
+    background-size: 13px;
+    box-sizing: border-box;
+    border: 2px solid $semi-transparent-white;
+    border-radius: 1px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+    padding: 18px 11% 18px 18px;
+    position: relative;
+    text-align: center;
+    text-align-last: center;
+    transition: color 0.2 ease-in, opacity 0.2 ease-out;
+    width: calc(50% - 5px);
+    -webkit-appearance: none;
+
+    &--left {
+      text-align: left;
+      text-align-last: left;
+    }
+
+    &--right {
+      float: right;
+    }
+
+    &--wide {
+      background-position: 95% 50%;
+      width: 100%;
+    }
+
+    &--hidden {
+      color: transparent;
+      opacity: 0.2;
+    }
+
+    &:focus {
+      outline-color: $transparent-white;
+      outline-width: 3px;
+    }
+  }
+
+  &__option {
+    &--default {
+      display: none;
+    }
+  }
+
+  &__input {
+    color: $white;
+    background-color: transparent;
+    box-sizing: border-box;
+    border: 2px solid $semi-transparent-white;
+    border-radius: 1px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+    padding: 18px 11% 18px 18px;
+    width: 100%;
+
+    &:focus {
+      outline-color: $transparent-white;
+      outline-width: 3px;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $semi-transparent-white;
+    }
+
+    &::-moz-placeholder {
+      color: $semi-transparent-white;
+    }
+    &:-ms-input-placeholder {
+      color: $semi-transparent-white;
+    }
+    &:-moz-placeholder {
+      color: $semi-transparent-white;
+    }
+
+    &--lens {
+      background-image: url('../img/lens.png');
+      background-position: 95% 50%;
+      background-repeat: no-repeat;
+      background-size: 13px;
+    }
+  }
+
+  &__error {
+    display: none;
+    color: $red;
+  }
+
+  &__button {
+    color: $pink;
+    cursor: pointer;
+    background-color: $white;
+    border: none;
+    border-radius: 0;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: normal;
+    margin-top: 30px;
+    padding: 15px 30px;
+    position: relative;
+
+    &:before, &:after {
+      background-color: $white;
+      content: '';
+      height: 100%;
+      position: absolute;
+      top: 0;
+      width: 20px;
+    }
+
+    &:before {
+      left: -20px;
+      border-radius: 20px 0 0 20px;
+    }
+
+    &:after {
+      right: -20px;
+      border-radius: 0 20px 20px 0;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
