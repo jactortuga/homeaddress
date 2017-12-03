@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Octopus Labs</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400|Ubuntu:400:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,600|Ubuntu:700" rel="stylesheet">
     <link rel="stylesheet" href="dist/css/style.css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="dist/js/main.min.js"></script>
@@ -20,33 +20,44 @@
           <p class="form-section__description">Please enter the director’s home address for the last 3 years.</p>
           <hr class="form-section__break">
         </div>
+        <div class="form-section__inner form-section__inner--wide form-section__inner--row form-section__inner--hidden">
+          <div class="form-section__inner form-section__inner--half form-section__inner--opaque">
+            <p>Full Address here</p>
+            <p>Full time here</p>
+          </div>
+          <div class="form-section__inner form-section__inner--half form-section__inner--opaque">
+            <p>Full Address here</p>
+            <p>Full time here</p>
+          </div>
+
+        </div>
         <form id="addressForm">
           <div class="form-section__inner form-section__inner--narrow">
             <fieldset class="form-section__fieldset">
               <legend class="form-section__legend">How long did you stay at your <span class="form-section__span">current address</span>?</legend>
               <select required class="form-section__select">
                 <option value="" disabled selected class="form-section__option form-section__option--default">Years</option>
-                <option value="0">0 Years</option>
-                <option value="1">1 Year</option>
-                <option value="2">2 Year</option>
-                <option value="3">3 Year</option>
-                <option value="more">More</option>
+                <option value="0 Years">0 Years</option>
+                <option value="1 Year">1 Year</option>
+                <option value="2 Years">2 Year</option>
+                <option value="3 Years">3 Year</option>
+                <option value="4 Years+">4 Years+</option>
               </select>
               <select required class="form-section__select form-section__select--right">
                 <option value="" disabled selected class="form-section__option form-section__option--default">Months</option>
-                <option value="0">0 Months</option>
-                <option value="1">1 Month</option>
-                <option value="2">2 Months</option>
-                <option value="3">3 Months</option>
-                <option value="4">4 Months</option>
-                <option value="5">5 Months</option>
-                <option value="6">6 Months</option>
-                <option value="7">7 Months</option>
-                <option value="8">8 Months</option>
-                <option value="9">9 Months</option>
-                <option value="10">10 Months</option>
-                <option value="11">11 Months</option>
-                <option value="12">12 Months</option>
+                <option value="0 Months">0 Months</option>
+                <option value="1 Month">1 Month</option>
+                <option value="2 Months">2 Months</option>
+                <option value="3 Months">3 Months</option>
+                <option value="4 Months">4 Months</option>
+                <option value="5 Months">5 Months</option>
+                <option value="6 Months">6 Months</option>
+                <option value="7 Months">7 Months</option>
+                <option value="8 Months">8 Months</option>
+                <option value="9 Months">9 Months</option>
+                <option value="10 Months">10 Months</option>
+                <option value="11 Months">11 Months</option>
+                <option value="12 Months">12 Months</option>
               </select>
             </fieldset>
             <fieldset class="form-section__fieldset">
@@ -55,7 +66,7 @@
             </fieldset>
             <p id="errorMessage" class="form-section__error">Sorry, your address could not be found. Please try again.</p>
           </div>
-          <div id="extraFieldsContainer" class="form-section__inner form-section__inner--wide">
+          <div id="extraFieldsContainer" class="form-section__inner form-section__inner--wide form-section__inner--arrows form-section__inner--hidden">
             <div class="form-section__inner form-section__inner--half">
               <fieldset class="form-section__fieldset">
                 <legend class="form-section__legend">Address line 1:</legend>

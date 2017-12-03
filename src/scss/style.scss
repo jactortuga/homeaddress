@@ -1,7 +1,9 @@
 @import 'reset';
 
 $transparent-white: rgba(255,255,255,0.1);
+$opaque-transparent-white: rgba(255,255,255,0.3);
 $semi-transparent-white: rgba(255,255,255,0.5);
+
 $white: #ffffff;
 $pink: #ff2e87;
 $red: #ff0033;
@@ -14,7 +16,7 @@ $red: #ff0033;
   background-position: top left;
   background-size: cover;
   font-family: 'Roboto', sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: lighter;
   line-height: 1.2;
   letter-spacing: 0.4px
@@ -59,12 +61,24 @@ $red: #ff0033;
     }
 
     &--wide {
-      display: none;
       justify-content: space-between;
       position: relative;
-      margin-top: 70px;
       max-width: 810px;
+    }
 
+    &--row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    &--hidden {
+      display: none;
+      margin-top: 70px;
+    }
+
+    &--arrows {
         &:before {
           background-image: url('../img/arrow_double.png');
           background-size: 13px;
@@ -78,6 +92,15 @@ $red: #ff0033;
           top: -43px;
           width: 13px;
         }
+    }
+
+    &--opaque {
+      background-color: $opaque-transparent-white;
+      line-height: 1.5;
+      margin-bottom: 10px;
+      padding: 10px;
+      text-align: left;
+      box-sizing: border-box;
     }
   }
 
@@ -135,7 +158,6 @@ $red: #ff0033;
     box-sizing: border-box;
     border: 2px solid $semi-transparent-white;
     border-radius: 1px;
-    font-family: 'Ubuntu', sans-serif;
     font-size: 16px;
     padding: 18px 11% 18px 18px;
     position: relative;
@@ -182,7 +204,6 @@ $red: #ff0033;
     box-sizing: border-box;
     border: 2px solid $semi-transparent-white;
     border-radius: 1px;
-    font-family: 'Ubuntu', sans-serif;
     font-size: 16px;
     padding: 18px 11% 18px 18px;
     width: 100%;
@@ -225,8 +246,7 @@ $red: #ff0033;
     background-color: $white;
     border: none;
     border-radius: 0;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: normal;
+    font-weight: 600;
     margin-top: 30px;
     padding: 15px 30px;
     position: relative;
