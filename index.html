@@ -1,30 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Octopus Labs</title>
+    <title>Octopus Labs: Home Address</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,600|Ubuntu:700" rel="stylesheet">
     <link rel="stylesheet" href="dist/css/style.css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="dist/js/main.min.js"></script>
   </head>
   <body class="site-body">
+    <!-- PAGE HEADER -->
     <header class="site-header">
-      <img src="./dist/img/logo.png" alt="octopus_labs" class="site-header__logo" >
+      <img src="./dist/img/logo.png" alt="Octopus Labs" class="site-header__logo" >
     </header>
+    <!-- PAGE MAIN -->
     <main class="site-main">
+      <!-- FORM SECTION WRAPPER -->
       <section id="formContainer" class="form-section">
-        <div class="form-section__inner form-section__inner--narrow">
+        <!-- FORM SECTION HEADER -->
+        <header class="form-section__inner form-section__inner--narrow">
           <h1 class="form-section__title">Home address</h1>
           <p class="form-section__description">Please enter the director’s home address for the last 3 years.</p>
           <hr class="form-section__break">
-        </div>
+        </header>
+        <!-- FORM ADDRESS BOXES CONTAINER -->
         <div id="addressBoxesContainer" class="form-section__inner form-section__inner--wide form-section__inner--row form-section__inner--hidden"></div>
+        <!-- FORM -->
         <form id="addressForm">
+          <!-- FORM TOP WRAPPER -->
           <div class="form-section__inner form-section__inner--narrow">
+            <!-- FORM ADDRESS TIME FIELDSET -->
             <fieldset class="form-section__fieldset">
               <legend class="form-section__legend">How long did you stay at your <span class="form-section__span">current address</span>?</legend>
+              <!-- FORM ADDRESS YEARS DROPDOWN -->
               <select id="yearsInput" required class="form-section__select">
                 <option value="" disabled selected class="form-section__option form-section__option--default">Years</option>
                 <option value="0 Years">0 Years</option>
@@ -33,6 +42,7 @@
                 <option value="3 Years">3 Year</option>
                 <option value="4 Years+">4 Years+</option>
               </select>
+              <!-- FORM ADDRESS MONTHS DROPDOWN -->
               <select id="monthsInput" required class="form-section__select form-section__select--right">
                 <option value="" disabled selected class="form-section__option form-section__option--default">Months</option>
                 <option value="0 Months">0 Months</option>
@@ -50,42 +60,54 @@
                 <option value="12 Months">12 Months</option>
               </select>
             </fieldset>
+            <!-- FORM ADDRESS POSTCODE FIELDSET -->
             <fieldset class="form-section__fieldset">
               <legend class="form-section__legend">Your address:</legend>
               <input type="text" required id="postcodeInput" class="form-section__input form-section__input--lens"  placeholder="Postcode">
             </fieldset>
+            <!-- FORM ERROR MESSAGE -->
             <p id="errorMessage" class="form-section__error">Sorry, your address could not be found. Please try again.</p>
           </div>
+          <!-- FORM BOTTOM WRAPPER -->
           <div id="extraFieldsContainer" class="form-section__inner form-section__inner--wide form-section__inner--arrows form-section__inner--hidden">
+            <!-- FORM BOTTOM LEFT WRAPPER -->
             <div class="form-section__inner form-section__inner--half">
+              <!-- FORM ADDRESS LINE 1 FIELDSET -->
               <fieldset class="form-section__fieldset">
                 <legend class="form-section__legend">Address line 1:</legend>
                 <input type="text" id="lineOneInput" class="form-section__input">
               </fieldset>
+              <!-- FORM ADDRESS LINE 2 FIELDSET -->
               <fieldset class="form-section__fieldset">
                 <legend class="form-section__legend">Address line 2:</legend>
                 <input type="text" id="lineTwoInput" class="form-section__input">
               </fieldset>
+              <!-- FORM ADDRESS LINE 3 FIELDSET -->
               <fieldset class="form-section__fieldset">
                 <legend class="form-section__legend">Address line 3:</legend>
                 <input type="text" id="lineThreeInput" class="form-section__input">
               </fieldset>
             </div>
+            <!-- FORM BOTTOM RIGHT WRAPPER -->
             <div class="form-section__inner form-section__inner--half">
+              <!-- FORM ADDRESS TOWN FIELDSET -->
               <fieldset class="form-section__fieldset">
                 <legend class="form-section__legend">Town:</legend>
                 <input type="text" id="townInput" class="form-section__input">
               </fieldset>
+              <!-- FORM ADDRESS COUNTY FIELDSET -->
               <fieldset class="form-section__fieldset">
                 <legend class="form-section__legend">County:</legend>
                 <select id="countyInput" class="form-section__select form-section__select--left form-section__select--wide"></select>
               </fieldset>
+              <!-- FORM ADDRESS COUNTRY FIELDSET -->
               <fieldset class="form-section__fieldset">
                 <legend class="form-section__legend">Country:</legend>
                 <select id="countryInput" class="form-section__select form-section__select--left form-section__select--wide"></select>
               </fieldset>
             </div>
           </div>
+          <!-- FORM SUBMIT BUTTON -->
           <button class="form-section__button">Confirm and continue</button>
         </form>
       </section>
