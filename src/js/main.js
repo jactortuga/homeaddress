@@ -31,7 +31,7 @@ $(document).ready(function() {
         var addresses = data.addresses;
         $('#formContainer').removeClass('form-section--opaque');
         $('#postcodeInput').attr('disabled', true);
-        $('#postcodeInput').addClass('form-section__input--disabled');
+        $('#postcodeInput').addClass('form-fieldset__input--disabled');
         generateAddressDropdown(addresses);
       },
       error: function(data) {
@@ -53,7 +53,7 @@ $(document).ready(function() {
 
   function generateAddressDropdown(addressList) {
     $('#errorMessage').before(
-      $('<fieldset id="addressFieldset" class="form-section__fieldset form-section__fieldset--hidden"><legend class="form-section__legend">Select your address:</legend><select required id="addressInput" class="form-section__select form-section__select--right form-section__select--wide"><option value="" disabled selected class="form-section__option form-section__option--default">Select your address</option></select></fieldset>')
+      $('<fieldset id="addressFieldset" class="form-fieldset form-fieldset--hidden"><legend class="form-fieldset__legend">Select your address:</legend><select required id="addressInput" class="form-fieldset__select form-fieldset__select--left form-fieldset__select--wide"><option value="" disabled selected hidden>Select your address</option></select></fieldset>')
     );
 
     for (var i = 0; i < addressList.length; i++){
@@ -102,10 +102,10 @@ $(document).ready(function() {
     $('#countryInput').on('change', function() {
       if(this.value === 'United Kingdom') {
         $('#countyInput').attr('disabled', false);
-        $('#countyInput').removeClass('form-section__select--hidden');
+        $('#countyInput').removeClass('form-fieldset__select--hidden');
       } else {
         $('#countyInput').attr('disabled', true);
-        $('#countyInput').addClass('form-section__select--hidden');
+        $('#countyInput').addClass('form-fieldset__select--hidden');
       }
     });
   }
@@ -145,7 +145,7 @@ $(document).ready(function() {
     $('#addressInput').val('');
     $('#postcodeInput').val('');
     $('#postcodeInput').attr('disabled', false);
-    $('#postcodeInput').removeClass('form-section__input--disabled');
+    $('#postcodeInput').removeClass('form-fieldset__input--disabled');
     $('#addressFieldset').remove();
   }
 });

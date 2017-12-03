@@ -1,6 +1,7 @@
 @import 'reset';
 @import 'variables';
 @import 'form-section';
+@import 'form-fieldset';
 
 
 .site-body {
@@ -16,6 +17,7 @@
   letter-spacing: 0.4px
 }
 
+
 .site-header {
   background-color: $transparent-white-light;
   height: 100px;
@@ -29,6 +31,7 @@
     width: 150px;
   }
 }
+
 
 .site-main {
   min-height: calc(100vh - 100px);

@@ -1,0 +1,115 @@
+@import 'variables';
+
+.form-fieldset {
+  display: inline-block;
+  margin-bottom: 20px;
+  text-align: left;
+  width: 100%;
+
+  &--hidden {
+    display: none;
+  }
+
+
+  &__input {
+    color: $white;
+    background-color: transparent;
+    box-sizing: border-box;
+    border: 2px solid $transparent-white-strong;
+    border-radius: 1px;
+    font-size: 16px;
+    padding: 18px 11% 18px 18px;
+    width: 100%;
+
+    &:focus {
+      outline-color: $transparent-white-light;
+      outline-width: 3px;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $transparent-white-strong;
+    }
+
+    &::-moz-placeholder {
+      color: $transparent-white-strong;
+    }
+    &:-ms-input-placeholder {
+      color: $transparent-white-strong;
+    }
+    &:-moz-placeholder {
+      color: $transparent-white-strong;
+    }
+
+    &--disabled {
+      opacity: 0.5;
+    }
+
+    &--lens {
+      background-image: url('../img/lens.png');
+      background-position: 95% 50%;
+      background-repeat: no-repeat;
+      background-size: 13px;
+    }
+  }
+
+
+  &__legend {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+
+  &__select {
+    color: $white;
+    background-color: transparent;
+    background-image: url('../img/arrow_down.png');
+    background-position: 90% 50%;
+    background-repeat: no-repeat;
+    background-size: 13px;
+    box-sizing: border-box;
+    border: 2px solid $transparent-white-strong;
+    border-radius: 1px;
+    font-size: 16px;
+    padding: 18px 11% 18px 18px;
+    position: relative;
+    text-align: center;
+    text-align-last: center;
+    transition: color 0.2 ease-in, opacity 0.2 ease-out;
+    width: calc(50% - 5px);
+    -webkit-appearance: none;
+
+    &:focus {
+      outline-color: $transparent-white-light;
+      outline-width: 3px;
+    }
+
+    &:invalid {
+      color: $transparent-white-strong;
+    }
+
+    &--hidden {
+      color: transparent;
+      opacity: 0.2;
+    }
+
+    &--left {
+      text-align: left;
+      text-align-last: left;
+    }
+
+    &--right {
+      float: right;
+    }
+
+    &--wide {
+      background-position: 95% 50%;
+      width: 100%;
+    }
+  }
+
+  
+  &__span {
+    font-weight: normal;
+  }
+}
